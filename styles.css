@@ -930,3 +930,27 @@ html[lang="ko"] .lead{ line-height:1.65; }
 }
 
 /* El botón de WhatsApp conserva su verde en los dos temas */
+
+/* ── Fondo de vídeo (solo tema violeta) ─────────────── */
+.hero__video{ display:none; }
+
+:root[data-tema="violeta"] .hero__canvas{ display:none; }  /* el vídeo sustituye al cielo dibujado */
+
+:root[data-tema="violeta"] .hero__video{
+  display:block;
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:cover;
+  z-index:-2;
+}
+/* Velo un punto más denso: el vídeo es brillante y el texto debe leerse */
+:root[data-tema="violeta"] .hero__veil{
+  background:
+    radial-gradient(120% 75% at 30% 20%, rgba(16,13,42,.35) 0%, rgba(16,13,42,.62) 100%),
+    linear-gradient(180deg, rgba(16,13,42,.45) 0%, rgba(16,13,42,.25) 40%, rgba(16,13,42,.85) 100%);
+}
+
+/* Si el usuario pide menos movimiento, se queda el póster fijo (lo pausa el JS) */
+@media (prefers-reduced-motion:reduce){
+  :root[data-tema="violeta"] .hero__video{ /* el póster se ve porque el vídeo queda en pausa */ }
+}

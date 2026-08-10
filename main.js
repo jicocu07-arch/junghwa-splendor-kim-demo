@@ -287,10 +287,41 @@
     });
   }
 
+  /* ── 5b. Fondo de vídeo (solo tema violeta) ──────── */
+  function initHeroVideo() {
+    var v = document.getElementById('heroVideo');
+    if (!v) return;
+    if (document.documentElement.getAttribute('data-tema') !== 'violeta') return;
+
+    /* Con "menos movimiento" activado: se queda el póster, no arranca */
+    if (reduced) { v.removeAttribute('autoplay'); return; }
+
+    function go() {
+      var p = v.play();
+      if (p && p.catch) p.catch(function () {/* autoplay bloqueado: queda el póster */});
+    }
+    if (v.readyState >= 2) go();
+    else v.addEventListener('loadeddata', go, { once: true });
+
+    /* Ahorra batería: pausa cuando el hero no se ve o la pestaña está oculta */
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) v.pause(); else go();
+    });
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (e) {
+        if (e[0].isIntersecting) go(); else v.pause();
+      }, { threshold: 0.02 });
+      io.observe(v);
+    }
+  }
+
   /* ── 6. El estanque: estrellas, reflejo y ondas ──── */
   function initPond() {
     var canvas = document.getElementById('pond');
     if (!canvas || !canvas.getContext) return;
+    /* En violeta el fondo es el vídeo: no gastamos CPU dibujando el cielo */
+    if (document.documentElement.getAttribute('data-tema') === 'violeta'
+        && document.getElementById('heroVideo')) return;
     var ctx = canvas.getContext('2d');
     if (!ctx) return;
 
@@ -565,6 +596,7 @@
     safe(initProgress, 'progress');
     safe(initReveal, 'reveal');
     safe(initTilt, 'tilt');
+    safe(initHeroVideo, 'heroVideo');
     safe(initPond, 'pond');
   }
 
