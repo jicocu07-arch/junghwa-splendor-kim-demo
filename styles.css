@@ -532,9 +532,24 @@ html[lang="ko"] .lead{ line-height:1.65; }
   .book__visual{ max-width:min(340px,72vw); margin-inline:auto; }
 }
 
-.book__visual{ perspective:1200px; }
+.book__visual{ perspective:1200px; position:relative; }
+
+/* Vídeo de constelaciones envolviendo la portada: atmósfera, no
+   protagonista. Enmascarado en óvalo para fundirse con el fondo. */
+.book__video{
+  position:absolute; z-index:0;
+  top:50%; left:50%;
+  width:172%; aspect-ratio:16/9;
+  transform:translate(-50%,-50%);
+  object-fit:cover;
+  opacity:.55;
+  mix-blend-mode:screen;      /* deja pasar solo el trazo magenta luminoso */
+  -webkit-mask-image:radial-gradient(closest-side, #000 52%, transparent 100%);
+          mask-image:radial-gradient(closest-side, #000 52%, transparent 100%);
+  pointer-events:none;
+}
 .book__tilt{
-  position:relative;
+  position:relative; z-index:1;
   transform-style:preserve-3d;
   transition:transform .5s cubic-bezier(.22,1,.36,1);
   animation:float 8s ease-in-out infinite;

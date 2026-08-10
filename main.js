@@ -330,6 +330,33 @@
     }
   }
 
+  /* ── 5c. Vídeo tras la portada del libro ─────────── */
+  function initBookVideo() {
+    var v = document.getElementById('bookVideo');
+    if (!v) return;
+    if (reduced) return;                 /* queda el póster, quieto */
+
+    function go() {
+      var p = v.play();
+      if (p && p.catch) p.catch(function () {});
+    }
+
+    /* Solo se carga y reproduce cuando el libro está a la vista */
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (e) {
+        if (e[0].isIntersecting) { v.preload = 'auto'; go(); }
+        else v.pause();
+      }, { threshold: 0.2 });
+      io.observe(v);
+    } else {
+      v.preload = 'auto'; go();
+    }
+
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) v.pause();
+    });
+  }
+
   /* ── 6. El estanque: estrellas, reflejo y ondas ──── */
   function initPond() {
     var canvas = document.getElementById('pond');
@@ -612,6 +639,7 @@
     safe(initReveal, 'reveal');
     safe(initTilt, 'tilt');
     safe(initHeroVideo, 'heroVideo');
+    safe(initBookVideo, 'bookVideo');
     safe(initPond, 'pond');
   }
 
