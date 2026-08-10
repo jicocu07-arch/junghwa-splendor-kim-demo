@@ -118,22 +118,17 @@
     if (el) el.textContent = new Date().getFullYear();
   }
 
-  /* ── 2. Navegación: fondo sólido + ocultar al bajar ─ */
+  /* ── 2. Navegación: siempre visible, fondo sólido al bajar ─ */
   function initNav() {
     var nav = document.getElementById('nav');
     if (!nav) return;
-    var last = window.pageYOffset, ticking = false;
+    var ticking = false;
 
     function update() {
-      var y = window.pageYOffset;
-      var menuOpen = document.getElementById('navLinks');
-      menuOpen = menuOpen && menuOpen.classList.contains('is-open');
-
-      nav.classList.toggle('is-solid', y > 40);
-      /* Con el menú móvil abierto la barra no se esconde nunca */
-      if (!menuOpen && y > 320 && y > last + 4) nav.classList.add('is-hidden');
-      else if (menuOpen || y < last - 4 || y < 320) nav.classList.remove('is-hidden');
-      last = y;
+      /* La barra queda fija y visible todo el rato; solo gana fondo
+         sólido en cuanto se sale de la portada, para que se lea. */
+      nav.classList.toggle('is-solid', window.pageYOffset > 40);
+      nav.classList.remove('is-hidden');
       ticking = false;
     }
     window.addEventListener('scroll', function () {
