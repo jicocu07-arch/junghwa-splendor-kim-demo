@@ -637,6 +637,10 @@ html[lang="ko"] .lead{ line-height:1.65; }
 }
 .path span{ font-size:.92rem; color:var(--star-dim); }
 
+/* El premio se marca en dorado, para que destaque en la trayectoria */
+.path__honor b{ color:var(--gold); }
+.path__honor::before{ background:var(--gold); box-shadow:0 0 0 5px var(--gold-soft); }
+
 /* ── Raíl con título fijo ───────────────────────────── */
 /* El título de la sección se queda pinado mientras su
    contenido pasa por la derecha. En móvil se apila y no se
@@ -770,22 +774,25 @@ html[lang="ko"] .lead{ line-height:1.65; }
 }
 .pubs__list li{
   display:grid;
-  grid-template-columns:5.5rem minmax(0,1.6fr) minmax(0,1fr) minmax(0,1fr) auto;
-  gap:1rem 1.4rem;
+  grid-template-columns:4.25rem minmax(0,1.55fr) minmax(0,1.3fr) auto;
+  gap:.5rem 1.3rem;
   align-items:baseline;
-  padding:1.7rem 0;
+  padding:1.5rem 0;
   border-bottom:1px solid var(--line);
 }
 @media (max-width:820px){
-  .pubs__list li{ grid-template-columns:1fr; gap:.35rem; }
+  .pubs__list li{ grid-template-columns:3.5rem 1fr; gap:.2rem .9rem; }
+  .pubs__title{ grid-column:2; }
+  .pubs__kind{ grid-column:2; }
+  .pubs__link{ grid-column:2; }
 }
 .pubs__year{ font-size:.85rem; letter-spacing:.14em; color:var(--gold); }
 .pubs__title{
-  font-family:var(--serif); font-size:clamp(1.35rem,1.1rem + .8vw,1.9rem);
-  line-height:1.2;
+  font-family:var(--serif); font-size:clamp(1.2rem,1rem + .7vw,1.7rem);
+  line-height:1.22;
 }
 .pubs__title em{ font-style:italic; }
-.pubs__kind,.pubs__pub{ font-size:.9rem; color:var(--star-dim); }
+.pubs__kind{ font-size:.88rem; color:var(--star-dim); line-height:1.45; }
 .pubs__link{
   font-size:.72rem; letter-spacing:.16em; text-transform:uppercase;
   text-decoration:none; color:var(--star);
