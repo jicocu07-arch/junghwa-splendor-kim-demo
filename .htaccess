@@ -1,0 +1,39 @@
+# ── Compresión ────────────────────────────────────────
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript application/json image/svg+xml
+</IfModule>
+
+# ── Caché ─────────────────────────────────────────────
+# El HTML nunca se cachea: así los ?v=… nuevos llegan siempre.
+# CSS/JS llevan cache-buster en la URL, se pueden cachear largo.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html              "access plus 0 seconds"
+  ExpiresByType text/css               "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/jpeg             "access plus 6 months"
+  ExpiresByType image/png              "access plus 6 months"
+  ExpiresByType image/webp             "access plus 6 months"
+  ExpiresByType image/svg+xml          "access plus 6 months"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "no-cache, must-revalidate, max-age=0"
+  </FilesMatch>
+  <FilesMatch "\.(css|js|jpg|jpeg|png|webp|svg|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  Header set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# ── URLs limpias y errores ────────────────────────────
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Forzar HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+ErrorDocument 404 /index.html

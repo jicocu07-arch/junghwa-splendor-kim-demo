@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="meta.title">Junghwa Splendor Kim — Poeta y traductora</title>
+<meta name="description" data-i18n-attrs="content:meta.desc" content="Junghwa Splendor Kim, poeta y traductora coreana radicada en Santiago de Chile. Traducción literaria y editorial entre coreano, español, inglés y francés.">
+<meta name="author" content="Junghwa Splendor Kim">
+<meta name="theme-color" content="#070b14">
+
+<meta property="og:type" content="website">
+<meta property="og:title" data-i18n-attrs="content:meta.title" content="Junghwa Splendor Kim — Poeta y traductora">
+<meta property="og:description" data-i18n-attrs="content:meta.desc" content="Poesía y traducción entre cuatro lenguas.">
+<meta property="og:image" content="assets/img/portada.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="alternate" hreflang="es" href="?lang=es">
+<link rel="alternate" hreflang="en" href="?lang=en">
+<link rel="alternate" hreflang="ko" href="?lang=ko">
+<link rel="alternate" hreflang="x-default" href="./">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&family=Noto+Serif+KR:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=20260724d">
+<script>
+/* Se ejecuta antes de pintar nada: así el tema no parpadea.
+   Para dejar fijo el tema violeta, escribe data-tema="violeta"
+   en la etiqueta <html> de arriba. */
+(function () {
+  var d = document.documentElement;
+  d.className = d.className.replace('no-js', 'js');
+  var t = (window.location.search.match(/[?&]tema=([a-z]+)/i) || [])[1];
+  if (t) {
+    t = t.toLowerCase();
+    if (t === 'violeta') d.setAttribute('data-tema', 'violeta');
+    else d.removeAttribute('data-tema');
+  }
+})();
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main" data-i18n="a11y.skip">Saltar al contenido</a>
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+<header class="nav" id="nav">
+  <a class="nav__brand" href="#top">
+    <span class="nav__rule" aria-hidden="true"></span>
+    <span class="nav__stack"><b>JUNGHWA</b><b>SPLENDOR KIM</b></span>
+  </a>
+
+  <nav class="nav__links" id="navLinks" aria-label="Menú">
+    <a href="#servicios" data-i18n="nav.trad">Traducción</a>
+
+    <div class="nav__group">
+      <button type="button" class="nav__top" aria-expanded="false" aria-controls="menu-obra">
+        <span data-i18n="nav.obra">Obra</span> <i aria-hidden="true"></i>
+      </button>
+      <div class="nav__menu" id="menu-obra">
+        <a href="#libro" data-i18n="nav.obra.libro">El libro</a>
+        <a href="#publicaciones" data-i18n="nav.obra.pubs">Publicaciones</a>
+        <a href="#elogios" data-i18n="nav.obra.criticas">Críticas</a>
+      </div>
+    </div>
+
+    <div class="nav__group">
+      <button type="button" class="nav__top" aria-expanded="false" aria-controls="menu-sobre">
+        <span data-i18n="nav.sobre">Sobre mí</span> <i aria-hidden="true"></i>
+      </button>
+      <div class="nav__menu" id="menu-sobre">
+        <a href="#quien-soy" data-i18n="nav.sobre.quien">Quién soy</a>
+        <a href="#cv" data-i18n="nav.sobre.cv">Formación y trayectoria</a>
+      </div>
+    </div>
+
+    <a class="nav__cta" href="#contacto" data-i18n="nav.contacto">Contacto</a>
+  </nav>
+
+  <div class="lang" id="lang" role="group" aria-label="Idioma / Language / 언어">
+    <button type="button" class="lang__b is-on" data-lang="es" title="Español" aria-label="Español">
+      <svg class="flag" viewBox="0 0 30 20" aria-hidden="true">
+        <rect width="30" height="20" fill="#c60b1e"/>
+        <rect y="5" width="30" height="10" fill="#ffc400"/>
+      </svg>
+    </button>
+    <button type="button" class="lang__b" data-lang="en" title="English" aria-label="English">
+      <svg class="flag" viewBox="0 0 60 40" aria-hidden="true">
+        <rect width="60" height="40" fill="#012169"/>
+        <path d="M0 0 60 40 M60 0 0 40" stroke="#fff" stroke-width="8"/>
+        <path d="M0 0 60 40 M60 0 0 40" stroke="#c8102e" stroke-width="4"/>
+        <path d="M30 0 V40 M0 20 H60" stroke="#fff" stroke-width="13"/>
+        <path d="M30 0 V40 M0 20 H60" stroke="#c8102e" stroke-width="8"/>
+      </svg>
+    </button>
+    <button type="button" class="lang__b" data-lang="ko" title="한국어" aria-label="한국어">
+      <svg class="flag" viewBox="0 0 36 24" aria-hidden="true">
+        <rect width="36" height="24" fill="#fff"/>
+        <path d="M13 12A5 5 0 0 1 23 12A2.5 2.5 0 0 0 18 12A2.5 2.5 0 0 1 13 12Z" fill="#cd2e3a"/>
+        <path d="M13 12A5 5 0 0 0 23 12A2.5 2.5 0 0 1 18 12A2.5 2.5 0 0 0 13 12Z" fill="#0047a0"/>
+        <g fill="#111">
+          <g transform="translate(7.5,6.5) rotate(-33.7)">
+            <rect x="-3" y="-1.9" width="6" height=".9"/><rect x="-3" y="-.45" width="6" height=".9"/><rect x="-3" y="1" width="6" height=".9"/>
+          </g>
+          <g transform="translate(28.5,6.5) rotate(33.7)">
+            <rect x="-3" y="-1.9" width="6" height=".9"/><rect x="-3" y="-.45" width="6" height=".9"/><rect x="-3" y="1" width="6" height=".9"/>
+          </g>
+          <g transform="translate(7.5,17.5) rotate(33.7)">
+            <rect x="-3" y="-1.9" width="6" height=".9"/><rect x="-3" y="-.45" width="6" height=".9"/><rect x="-3" y="1" width="6" height=".9"/>
+          </g>
+          <g transform="translate(28.5,17.5) rotate(-33.7)">
+            <rect x="-3" y="-1.9" width="2.5" height=".9"/><rect x=".5" y="-1.9" width="2.5" height=".9"/>
+            <rect x="-3" y="-.45" width="2.5" height=".9"/><rect x=".5" y="-.45" width="2.5" height=".9"/>
+            <rect x="-3" y="1" width="2.5" height=".9"/><rect x=".5" y="1" width="2.5" height=".9"/>
+          </g>
+        </g>
+      </svg>
+    </button>
+  </div>
+
+  <button type="button" class="nav__burger" id="navBurger"
+          aria-expanded="false" aria-controls="navLinks"
+          data-i18n-attrs="aria-label:a11y.menuOpen" aria-label="Abrir el menú">
+    <span aria-hidden="true"></span>
+  </button>
+</header>
+
+<main id="main">
+
+  <!-- ── PORTADA ────────────────────────────────────────── -->
+  <section class="hero" id="top">
+    <canvas class="hero__canvas" id="pond" aria-hidden="true"></canvas>
+    <div class="hero__veil" aria-hidden="true"></div>
+
+    <div class="hero__inner">
+      <div class="hero__text">
+        <p class="eyebrow line" style="--d:.1s" data-i18n="hero.eyebrow">Poeta · Traductora · Corresponsal</p>
+        <h1 class="hero__title">
+          <span class="line" style="--d:.25s">Junghwa</span>
+          <span class="line ital" style="--d:.4s">Splendor</span>
+          <span class="line" style="--d:.55s">Kim</span>
+        </h1>
+        <p class="hero__lead line" style="--d:.8s" data-i18n="hero.lead">
+          Nacida en Corea del Sur, escribe desde Santiago de Chile.
+          Poesía, relato y traducción entre coreano, español, inglés y francés.
+        </p>
+        <div class="hero__cta line" style="--d:.95s">
+          <a class="btn btn--gold" href="#servicios" data-i18n="hero.cta1">Servicios de traducción</a>
+          <a class="btn btn--ghost" href="#libro" data-i18n="hero.cta2">Pondering Stars on the Pond</a>
+        </div>
+      </div>
+
+      <figure class="portrait line" style="--d:.7s" data-empty="Retrato"
+              data-i18n-attrs="data-empty:hero.portraitEmpty">
+        <img src="assets/img/retrato-bn.jpg" alt="Retrato de Junghwa Splendor Kim"
+             width="1200" height="1600" decoding="async" fetchpriority="high"
+             data-i18n-attrs="alt:hero.portraitAlt"
+             onerror="this.parentNode.classList.add('is-empty'); this.remove();">
+        <figcaption data-i18n="hero.portraitCaption">Santiago de Chile</figcaption>
+      </figure>
+    </div>
+
+    <div class="hero__scroll line" style="--d:1.2s" aria-hidden="true">
+      <span data-i18n="hero.scroll">Desliza</span><i></i>
+    </div>
+  </section>
+
+  <!-- ── QUIÉN SOY ──────────────────────────────────────── -->
+  <section class="who" id="quien-soy">
+    <div class="wrap who__grid">
+      <div>
+        <p class="eyebrow reveal" data-i18n="who.eyebrow">Quién soy</p>
+        <h2 class="h2 reveal" data-i18n="who.h2">De Seúl<br>a <em>Santiago</em></h2>
+      </div>
+      <div class="who__text">
+        <p class="lead reveal" data-i18n="who.p1">
+          Estudié filología hispánica y francesa en la Hankuk University of Foreign
+          Studies. Leyendo a Pablo Neruda y a Gabriela Mistral decidí cruzar el mundo
+          entero hasta el país que los había escrito.
+        </p>
+        <p class="reveal" data-i18n="who.p2">
+          En Chile obtuve el máster y el doctorado en literatura latinoamericana por la
+          Universidad de Chile. Hoy vivo en Santiago, donde trabajo como corresponsal de
+          KBS y como traductora. He publicado poemarios y relatos en las cuatro lenguas
+          en las que pienso.
+        </p>
+        <p class="reveal" data-i18n="who.p3">
+          Traducir y escribir son para mí el mismo oficio: encontrar, en otra lengua,
+          la temperatura exacta de lo que alguien quiso decir.
+        </p>
+
+        <ul class="stats reveal">
+          <li><b>4</b><span data-i18n="who.stat1">Lenguas de trabajo</span></li>
+          <li><b data-i18n="who.stat2b">Ph.D.</b><span data-i18n="who.stat2">Literatura latinoamericana, U. de Chile</span></li>
+          <li><b>KBS</b><span data-i18n="who.stat3">Corresponsal en Santiago</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICIOS ──────────────────────────────────────── -->
+  <section class="services" id="servicios">
+    <div class="wrap rail">
+     <div class="rail__head">
+      <p class="eyebrow reveal" data-i18n="srv.eyebrow">Servicios</p>
+      <h2 class="h2 reveal" data-i18n="srv.h2">Tipos de <em>traducción</em></h2>
+      <p class="lead reveal" data-i18n="srv.lead">
+        Trabajo entre el coreano, el español, el inglés y el francés, con formación
+        académica en literatura y experiencia diaria en medios de comunicación.
+      </p>
+     </div>
+     <div class="rail__body">
+      <div class="cards">
+        <article class="card reveal">
+          <span class="card__n">01</span>
+          <h3 data-i18n="srv.1t">Traducción literaria</h3>
+          <p data-i18n="srv.1d">
+            Poesía, narrativa y ensayo. Trabajo con el ritmo, la imagen y el silencio
+            del original, no solo con su significado.
+          </p>
+        </article>
+
+        <article class="card reveal">
+          <span class="card__n">02</span>
+          <h3 data-i18n="srv.2t">Traducción editorial</h3>
+          <p data-i18n="srv.2d">
+            Manuscritos, catálogos, textos de contracubierta, dosieres de prensa y
+            material de promoción para editoriales y agencias literarias.
+          </p>
+        </article>
+
+        <article class="card reveal">
+          <span class="card__n">03</span>
+          <h3 data-i18n="srv.3t">Traducción académica</h3>
+          <p data-i18n="srv.3d">
+            Artículos, tesis y ponencias en el ámbito de las humanidades, con el
+            respaldo de un doctorado en literatura latinoamericana.
+          </p>
+        </article>
+
+        <article class="card reveal">
+          <span class="card__n">04</span>
+          <h3 data-i18n="srv.4t">Medios y comunicación</h3>
+          <p data-i18n="srv.4d">
+            Noticias, entrevistas, notas de prensa y contenido corporativo entre Corea
+            y el mundo hispanohablante, desde la práctica de la corresponsalía.
+          </p>
+        </article>
+
+        <article class="card reveal">
+          <span class="card__n">05</span>
+          <h3 data-i18n="srv.5t">Interpretación y acompañamiento</h3>
+          <p data-i18n="srv.5d">
+            Reuniones, entrevistas, ferias del libro y encuentros culturales entre
+            delegaciones coreanas e hispanohablantes.
+          </p>
+        </article>
+
+        <article class="card reveal">
+          <span class="card__n">06</span>
+          <h3 data-i18n="srv.6t">Revisión y corrección</h3>
+          <p data-i18n="srv.6d">
+            Lectura crítica de traducciones ya hechas, ajuste de estilo y adaptación
+            cultural del texto a su público final.
+          </p>
+        </article>
+      </div>
+
+      <div class="pairs reveal">
+        <p class="pairs__title" data-i18n="srv.pairs">Lenguas de trabajo</p>
+        <ul>
+          <li lang="ko">한국어</li>
+          <li>Español</li>
+          <li>English</li>
+          <li>Français</li>
+        </ul>
+      </div>
+     </div>
+    </div>
+  </section>
+
+  <!-- ── PUBLICACIONES ──────────────────────────────────── -->
+  <section class="pubs" id="publicaciones">
+    <div class="wrap rail">
+     <div class="rail__head">
+      <p class="eyebrow reveal" data-i18n="pub.eyebrow">Publicaciones</p>
+      <h2 class="h2 reveal" data-i18n="pub.h2">Poesía y <em>relato</em></h2>
+      <p class="lead reveal" data-i18n="pub.lead">
+        He publicado poemarios y relatos en coreano, español, inglés y francés.
+        Esta es la obra más reciente.
+      </p>
+     </div>
+     <div class="rail__body">
+      <ol class="pubs__list">
+        <li class="reveal">
+          <span class="pubs__year">2025</span>
+          <span class="pubs__title"><em>Pondering Stars on the Pond</em></span>
+          <span class="pubs__kind" data-i18n="pub.1kind">Poesía · Inglés</span>
+          <span class="pubs__pub">Five Points Publishing</span>
+          <a class="pubs__link" href="#libro" data-i18n="pub.1link">Ver ficha</a>
+        </li>
+
+        <!-- ── CÓMO AÑADIR OTRO TÍTULO ─────────────────────────────
+             Copia el bloque de abajo, sácalo de este comentario y
+             rellénalo. Si quieres que el texto cambie con el idioma,
+             añade su clave en i18n.js igual que las de arriba.
+
+        <li class="reveal">
+          <span class="pubs__year">2023</span>
+          <span class="pubs__title"><em>Título del libro</em></span>
+          <span class="pubs__kind">Poesía · Español</span>
+          <span class="pubs__pub">Nombre de la editorial</span>
+          <a class="pubs__link" href="https://ejemplo.com" target="_blank" rel="noopener">Ver más</a>
+        </li>
+        ───────────────────────────────────────────────────────── -->
+      </ol>
+     </div>
+    </div>
+  </section>
+
+  <!-- ── EL LIBRO ───────────────────────────────────────── -->
+  <section class="book" id="libro">
+    <div class="wrap book__grid">
+
+      <div class="book__visual reveal">
+        <div class="book__tilt" id="tilt">
+          <div class="book__glow" aria-hidden="true"></div>
+          <img class="book__cover" src="assets/img/portada.jpg" width="943" height="1500"
+               loading="lazy" decoding="async"
+               data-i18n-attrs="alt:book.coverAlt"
+               alt="Portada del libro Pondering Stars on the Pond, de Junghwa Splendor Kim">
+        </div>
+      </div>
+
+      <div class="book__body">
+        <p class="eyebrow reveal" data-i18n="book.eyebrow">Último libro · 2025</p>
+        <h2 class="h2 reveal">Pondering<br><em>Stars on the Pond</em></h2>
+        <p class="lead reveal" data-i18n="book.lead">
+          Una colección de poemas en inglés atravesada por la nostalgia, la melancolía
+          y el asombro ante la belleza de la vida. Estrellas que no están en el cielo,
+          sino en el agua que las mira.
+        </p>
+
+        <dl class="meta reveal">
+          <div><dt data-i18n="book.m1">Editorial</dt><dd>Five Points Publishing</dd></div>
+          <div><dt data-i18n="book.m2">Publicación</dt><dd data-i18n="book.m2v">Junio de 2025</dd></div>
+          <div><dt data-i18n="book.m3">Extensión</dt><dd data-i18n="book.m3v">124 páginas</dd></div>
+          <div><dt data-i18n="book.m4">Idioma</dt><dd data-i18n="book.m4v">Inglés</dd></div>
+          <div><dt>ISBN</dt><dd>979-8-9991142-0-4</dd></div>
+          <div><dt data-i18n="book.m6">Formatos</dt><dd data-i18n="book.m6v">Kindle y tapa blanda</dd></div>
+        </dl>
+
+        <div class="book__cta reveal">
+          <a class="btn btn--gold" href="https://www.amazon.com/dp/B0FCDC2GZK" target="_blank" rel="noopener" data-i18n="book.buy1">Comprar en Kindle</a>
+          <a class="btn btn--ghost" href="https://www.amazon.com/Pondering-Stars-Pond-Junghwa-Splendor/dp/B0FCMPH7XP" target="_blank" rel="noopener" data-i18n="book.buy2">Edición en papel</a>
+        </div>
+        <p class="fineprint reveal" data-i18n="book.also">
+          También disponible en
+          <a href="https://www.waterstones.com/book/pondering-stars-on-the-pond/junghwa-splendor-kim/9798999114204" target="_blank" rel="noopener">Waterstones</a>.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── CRÍTICAS ───────────────────────────────────────── -->
+  <section class="praise" id="elogios">
+    <div class="wrap">
+      <p class="eyebrow center reveal" data-i18n="praise.eyebrow">Lo que se ha dicho</p>
+
+      <figure class="quote reveal">
+        <blockquote data-i18n="praise.q1">
+          «Una sutileza que la vuelve a la vez romántica, sensual, melancólica y mística.»
+        </blockquote>
+        <figcaption>
+          Felipe Hugueño<span data-i18n="praise.r1">Profesor asociado de Estudios Hispánicos, Virginia Wesleyan University</span>
+        </figcaption>
+      </figure>
+
+      <figure class="quote quote--alt reveal">
+        <blockquote data-i18n="praise.q2">
+          «Une la estética oriental con la sensualidad española.»
+        </blockquote>
+        <figcaption>
+          Alejandro Varderi<span data-i18n="praise.r2">Profesor de Estudios Hispánicos, City University of New York</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ── CURRÍCULUM ─────────────────────────────────────── -->
+  <section class="cv" id="cv">
+    <div class="wrap rail">
+     <div class="rail__head">
+      <p class="eyebrow reveal" data-i18n="cv.eyebrow">Currículum</p>
+      <h2 class="h2 reveal" data-i18n="cv.h2">Formación y <em>trayectoria</em></h2>
+     </div>
+     <div class="rail__body">
+      <div class="cv__grid">
+        <div>
+          <h3 class="cv__h reveal" data-i18n="cv.edu">Formación</h3>
+          <ol class="path">
+            <li class="reveal">
+              <b data-i18n="cv.edu1b">Doctorado</b>
+              <span data-i18n="cv.edu1">Literatura latinoamericana · Universidad de Chile</span>
+            </li>
+            <li class="reveal">
+              <b data-i18n="cv.edu2b">Máster</b>
+              <span data-i18n="cv.edu2">Literatura latinoamericana · Universidad de Chile</span>
+            </li>
+            <li class="reveal">
+              <b data-i18n="cv.edu3b">Licenciatura</b>
+              <span data-i18n="cv.edu3">Filología hispánica y francesa · Hankuk University of Foreign Studies, Seúl</span>
+            </li>
+          </ol>
+        </div>
+
+        <div>
+          <h3 class="cv__h reveal" data-i18n="cv.exp">Trayectoria</h3>
+          <ol class="path">
+            <li class="reveal">
+              <b data-i18n="cv.exp1b">Corresponsal · KBS</b>
+              <span data-i18n="cv.exp1">Cobertura informativa desde Santiago de Chile</span>
+            </li>
+            <li class="reveal">
+              <b data-i18n="cv.exp2b">Traductora</b>
+              <span data-i18n="cv.exp2">Literaria, editorial y académica entre cuatro lenguas</span>
+            </li>
+            <li class="reveal">
+              <b data-i18n="cv.exp3b">Autora</b>
+              <span data-i18n="cv.exp3">Poemarios y relatos en coreano, español, inglés y francés</span>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="cv__langs reveal">
+        <h3 class="cv__h" data-i18n="cv.langs">Idiomas</h3>
+        <ul>
+          <li><b lang="ko">한국어</b><span data-i18n="cv.l1">Lengua materna</span></li>
+          <li><b>Español</b><span data-i18n="cv.l2">Doctorado cursado en español</span></li>
+          <li><b>English</b><span data-i18n="cv.l3">Lengua de escritura literaria</span></li>
+          <li><b>Français</b><span data-i18n="cv.l4">Formación universitaria</span></li>
+        </ul>
+      </div>
+
+      <!-- ── CV EN PDF ───────────────────────────────────────────
+           Para ofrecer el CV descargable: guarda el archivo en
+           assets/cv-junghwa-splendor-kim.pdf y saca de este
+           comentario el párrafo de abajo.
+
+      <p class="reveal" style="margin-top:2.5rem">
+        <a class="btn btn--ghost" href="assets/cv-junghwa-splendor-kim.pdf" download>Descargar CV en PDF</a>
+      </p>
+      ──────────────────────────────────────────────────────── -->
+     </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACTO ───────────────────────────────────────── -->
+  <section class="contact" id="contacto">
+    <div class="wrap center">
+      <p class="eyebrow reveal" data-i18n="ct.eyebrow">Contacto</p>
+      <h2 class="h2 reveal" data-i18n="ct.h2">Encargos, prensa<br>y <em>encuentros</em></h2>
+      <p class="lead reveal" data-i18n="ct.lead">
+        Presupuestos de traducción, entrevistas, lecturas y consultas editoriales.
+      </p>
+      <div class="contact__cta reveal">
+        <a class="btn btn--gold" href="mailto:contacto@junghwasplendorkim.com" data-i18n="ct.mail">Escribir un correo</a>
+
+        <a class="btn btn--wa" href="https://wa.me/56982348397" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" fill="currentColor">
+            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23a8.23 8.23 0 0 1 0 16.47Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.53.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.71-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.47c-.16 0-.43.06-.65.31-.22.24-.85.83-.85 2.03s.88 2.35 1 2.51c.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.39.51.58.19 1.12.16 1.54.1.47-.07 1.47-.6 1.68-1.18.2-.58.2-1.07.14-1.18-.06-.11-.22-.17-.47-.29Z"/>
+          </svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__grid">
+    <p>© <span id="year">2026</span> Junghwa Splendor Kim</p>
+    <p class="foot__mid" data-i18n="foot.city">Santiago de Chile</p>
+    <p><a href="https://www.amazon.com/dp/B0FCDC2GZK" target="_blank" rel="noopener">Pondering Stars on the Pond</a></p>
+  </div>
+</footer>
+
+<script defer src="i18n.js?v=20260724d"></script>
+<script defer src="main.js?v=20260724d"></script>
+</body>
+</html>
