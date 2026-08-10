@@ -294,14 +294,29 @@
     if (document.documentElement.getAttribute('data-tema') !== 'violeta') return;
 
     /* Con "menos movimiento" activado: se queda el póster, no arranca */
-    if (reduced) { v.removeAttribute('autoplay'); return; }
+    if (reduced) { v.removeAttribute('autoplay'); v.pause(); return; }
 
     function go() {
       var p = v.play();
-      if (p && p.catch) p.catch(function () {/* autoplay bloqueado: queda el póster */});
+      if (p && p.catch) p.catch(function () {/* autoplay bloqueado: lo reintenta el gesto */});
     }
     if (v.readyState >= 2) go();
     else v.addEventListener('loadeddata', go, { once: true });
+
+    /* Plan B: si el navegador bloqueó el autoplay, arranca al primer
+       gesto del visitante (toque, clic, scroll o tecla). Se quita solo. */
+    function kick() {
+      go();
+      if (!v.paused) off();
+    }
+    function off() {
+      ['pointerdown', 'touchstart', 'click', 'keydown', 'scroll'].forEach(function (ev) {
+        window.removeEventListener(ev, kick, true);
+      });
+    }
+    ['pointerdown', 'touchstart', 'click', 'keydown', 'scroll'].forEach(function (ev) {
+      window.addEventListener(ev, kick, { capture: true, passive: true });
+    });
 
     /* Ahorra batería: pausa cuando el hero no se ve o la pestaña está oculta */
     document.addEventListener('visibilitychange', function () {
