@@ -33,14 +33,16 @@
     if (!dict) return;                 /* sin diccionario, queda el español del HTML */
 
     function chosen() {
+      /* 1º lo que diga la dirección (?lang=…) */
       var q = (window.location.search.match(/[?&]lang=([a-z]{2})/i) || [])[1];
       if (q && LANGS.indexOf(q.toLowerCase()) >= 0) return q.toLowerCase();
+      /* 2º el idioma que el visitante eligió la vez anterior */
       try {
         var s = window.localStorage.getItem(STORE);
         if (s && LANGS.indexOf(s) >= 0) return s;
       } catch (e) {}
-      var n = (navigator.language || 'es').slice(0, 2).toLowerCase();
-      return LANGS.indexOf(n) >= 0 ? n : 'es';
+      /* 3º por defecto, inglés: es la web de una autora internacional */
+      return 'en';
     }
 
     function apply(lang, remember) {
