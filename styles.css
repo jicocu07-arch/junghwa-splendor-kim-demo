@@ -817,6 +817,11 @@ html[lang="ko"] .lead{ line-height:1.65; }
 }
 .pubs__title em{ font-style:italic; }
 .pubs__kind{ font-size:.88rem; color:var(--star-dim); line-height:1.45; }
+/* Una obra puede tener más de un enlace (compra, vídeo…) */
+.pubs__links{
+  display:flex; flex-wrap:wrap; gap:.35rem 1.2rem;
+  justify-self:start;
+}
 .pubs__link{
   font-size:.72rem; letter-spacing:.16em; text-transform:uppercase;
   text-decoration:none; color:var(--star);
