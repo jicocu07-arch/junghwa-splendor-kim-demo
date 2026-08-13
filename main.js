@@ -15,22 +15,22 @@
   var reduced = window.matchMedia &&
                 window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* Texto suelto en el idioma activo, con el español de respaldo */
+  /* Texto suelto en el idioma activo, con el inglés de respaldo */
   function tr(key, fallback) {
     var d = window.__I18N__;
     if (!d) return fallback;
-    var l = document.documentElement.getAttribute('lang') || 'es';
-    var v = (d[l] && d[l][key]) || (d.es && d.es[key]);
+    var l = document.documentElement.getAttribute('lang') || 'en';
+    var v = (d[l] && d[l][key]) || (d.en && d.en[key]);
     return v || fallback;
   }
 
-  /* ── 0. Idioma: español, inglés y coreano ────────── */
-  var LANGS = ['es', 'en', 'ko'];
+  /* ── 0. Idioma: inglés y coreano ─────────────────── */
+  var LANGS = ['en', 'ko'];
   var STORE = 'jsk-lang';
 
   function initI18n() {
     var dict = window.__I18N__;
-    if (!dict) return;                 /* sin diccionario, queda el español del HTML */
+    if (!dict) return;                 /* sin diccionario, queda el inglés del HTML */
 
     function chosen() {
       /* 1º lo que diga la dirección (?lang=…) */
@@ -46,8 +46,8 @@
     }
 
     function apply(lang, remember) {
-      var t = dict[lang] || dict.es;
-      var base = dict.es;
+      var t = dict[lang] || dict.en;
+      var base = dict.en;   /* el inglés es el idioma base */
       var i, j;
 
       document.documentElement.setAttribute('lang', lang);
@@ -94,7 +94,7 @@
         /* La URL queda compartible: ?lang=en, ?lang=ko */
         if (window.history && window.history.replaceState) {
           var url = window.location.pathname +
-                    (lang === 'es' ? '' : '?lang=' + lang) +
+                    (lang === 'en' ? '' : '?lang=' + lang) +
                     window.location.hash;
           window.history.replaceState(null, '', url);
         }
@@ -152,8 +152,8 @@
         links.classList.toggle('is-open', state);
         burger.setAttribute('aria-expanded', state ? 'true' : 'false');
         burger.setAttribute('aria-label', state
-          ? tr('a11y.menuClose', 'Cerrar el menú')
-          : tr('a11y.menuOpen', 'Abrir el menú'));
+          ? tr('a11y.menuClose', 'Close the menu')
+          : tr('a11y.menuOpen', 'Open the menu'));
       };
 
       burger.addEventListener('click', function () {
