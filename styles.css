@@ -463,6 +463,15 @@ html[lang="ko"] .lead{ line-height:1.65; }
   color:var(--gold);
   padding-left:.12em;
 }
+/* Lema breve, justo bajo el nombre */
+.hero__tagline{
+  font-family:var(--serif);
+  font-size:clamp(1.15rem, min(1.05rem + .9vw, 2.7vh), 1.8rem);
+  color:var(--gold);
+  margin:0 0 .5rem;
+  max-width:30ch;
+}
+
 .hero__lead{
   font-family:var(--serif);
   font-size:clamp(1.1rem, min(1rem + .9vw, 2.6vh), 1.7rem);
@@ -829,6 +838,8 @@ html[lang="ko"] .lead{ line-height:1.65; }
   gap:clamp(2.5rem,5vw,4rem);
   margin-top:3rem;
 }
+/* Con una sola columna (solo formación) no hace falta partir la rejilla */
+.cv__grid--solo{ grid-template-columns:1fr; margin-top:0; }
 .cv__h{
   font-size:.7rem; letter-spacing:.28em; text-transform:uppercase;
   color:var(--gold); font-weight:400;
